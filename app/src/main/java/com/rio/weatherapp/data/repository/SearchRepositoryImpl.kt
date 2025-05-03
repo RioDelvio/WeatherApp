@@ -1,6 +1,5 @@
 package com.rio.weatherapp.data.repository
 
-import com.rio.weatherapp.data.mapper.toEntities
 import com.rio.weatherapp.data.mapper.toEntity
 import com.rio.weatherapp.data.network.api.ApiService
 import com.rio.weatherapp.domain.entity.City
@@ -11,5 +10,7 @@ class SearchRepositoryImpl @Inject constructor(
     private val apiService: ApiService
 ) : SearchRepository {
 
-    override suspend fun searchCity(query: String): List<City> = apiService.searchCity(query).toEntities()
+    override suspend fun searchCity(query: String): List<City> = apiService.searchCity(query).map {
+        it.toEntity()
+    }
 }

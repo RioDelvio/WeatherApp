@@ -88,6 +88,7 @@ dependencies {
     ksp(libs.dagger.compiler)
 
     implementation(libs.room.core)
+    implementation(libs.room.ktx)
     ksp(libs.room.compiler)
 
     implementation(libs.glide)
