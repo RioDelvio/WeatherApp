@@ -11,5 +11,3 @@ fun CityDbModel.toEntity(): City = City(id, name, country)
 fun CityDto.toEntity(): City = City(id, name, country)
 
 fun List<CityDbModel>.toEntities(): List<City> = map { it.toEntity() }
-
-fun List<CityDto>.toEntities(): List<City> = map { it.toEntity() }
