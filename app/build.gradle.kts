@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.kotlin.serialization)
+    id("kotlin-parcelize")
 }
 
 androidComponents {
@@ -82,7 +83,8 @@ dependencies {
     implementation(libs.mvikotlin.main)
     implementation(libs.mvikotlin.extensions.coroutines)
 
-    implementation(libs.decompose)
+    implementation(libs.decompose.core)
+    implementation(libs.decompose.compose)
 
     implementation(libs.dagger.core)
     ksp(libs.dagger.compiler)
